@@ -1,0 +1,10 @@
+/*
+Theme Name: Headless LMS
+Description: Minimal theme for headless WordPress LMS backend
+Version: 1.0
+*/
+
+/* Minimal styles for admin interface only */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}

@@ -1,0 +1,37 @@
+@echo off
+echo 🧪 Testing WPGraphQL LMS Setup...
+
+REM GraphQL endpoint
+set GRAPHQL_URL=http://localhost/lms/graphql
+
+echo.
+echo 1. Testing GraphQL endpoint availability...
+curl -s -o nul -w "Status: %%{http_code}" "%GRAPHQL_URL%"
+echo.
+
+echo.
+echo 2. Testing introspection query...
+curl -X POST -H "Content-Type: application/json" -d "{\"query\":\"query IntrospectionQuery { __schema { queryType { name } } }\"}" "%GRAPHQL_URL%"
+
+echo.
+echo.
+echo 3. Testing courses query...
+curl -X POST -H "Content-Type: application/json" -d "{\"query\":\"query GetCourses { courses { nodes { id title } } }\"}" "%GRAPHQL_URL%"
+
+echo.
+echo.
+echo 4. Testing CORS headers...
+curl -s -I -H "Origin: http://localhost:3000" "%GRAPHQL_URL%" | findstr /i "access-control"
+
+echo.
+echo.
+echo ✅ GraphQL API test completed!
+echo.
+echo 🔍 To test full query in browser:
+echo    POST %GRAPHQL_URL%
+echo    Body: {\"query\":\"{ courses { nodes { id title } } }\"}
+echo.
+echo 📖 GraphiQL IDE (if enabled):
+echo    %GRAPHQL_URL%
+
+pause

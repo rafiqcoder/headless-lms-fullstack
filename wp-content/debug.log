@@ -1,0 +1,1 @@
+[18-Aug-2025 15:50:12 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): No connection could be made because the target machine actively refused it in C:\xampp\htdocs\lms\wp-includes\class-wpdb.php on line 1988
