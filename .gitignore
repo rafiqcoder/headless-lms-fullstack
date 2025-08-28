@@ -1,0 +1,76 @@
+# WordPress Core - Exclude Everything Except Custom Code
+/wp-admin/
+/wp-includes/
+/wp-content/themes/twenty*/
+/wp-content/languages/
+/wp-content/upgrade/
+/wp-content/uploads/
+/wp-content/cache/
+/wp-content/mu-plugins/
+
+# WordPress Core Files
+wp-*.php
+index.php
+license.txt
+readme.html
+xmlrpc.php
+.htaccess
+
+# WordPress Config
+wp-config.php
+wp-config-sample.php
+
+# Third-party Plugins (keep only our custom plugins)
+wp-content/plugins/woocommerce/
+wp-content/plugins/wp-graphql/
+wp-content/plugins/*/
+
+# Keep our custom plugins
+!wp-content/plugins/lms-woocommerce-integration.php
+!wp-content/plugins/wpgraphql-lms-extension.php
+!wp-content/plugins/headless-lms/
+
+# Next.js
+headless-lms/.next/
+headless-lms/out/
+headless-lms/build/
+headless-lms/dist/
+headless-lms/node_modules/
+
+# Environment Files
+headless-lms/.env*
+!headless-lms/.env.example
+
+# Package Manager
+headless-lms/package-lock.json
+headless-lms/yarn.lock
+headless-lms/pnpm-lock.yaml
+
+# TypeScript
+headless-lms/*.tsbuildinfo
+
+# Temporary and Test Files
+headless-lms/data/
+temp/
+*.tmp
+*.temp
+*test*.php
+*verify*.php
+*activate*.php
+
+# IDE and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Logs and Cache
+*.log
+logs/
+wp-content/cache/
+
+# Database
+*.sql
+*.sql.gz
